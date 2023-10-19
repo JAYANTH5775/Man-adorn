@@ -1,23 +1,29 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
 
+import Profile from "./pages/Profile";
 
+//import signup from "./pages/signup";
+
+import Signin from "./pages/Signin";
+
+import Forgotpassword from "./pages/Forgotpassword";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
+    <>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
 
-        <p>
-          Hello world
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+          <Route path="/Profile" element={<Profile />} />
+
+          <Route path="/signin" element={<Signin />} />
+          <Route path="/forgot-password" element={<Forgotpassword />} />
+          <Route path="/signup" element={<signup />} />
+
+        </Routes>
+      </Router>
+    </>
   );
 }
 
